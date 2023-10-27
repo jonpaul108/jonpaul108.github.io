@@ -346,7 +346,6 @@ width: 100%;
 .image-placeholder {
     width: 150px;
     height: 150px;
-    background-color: #ddd;
     border-radius: 50%;
     margin-bottom: 20px;
     display: flex;
@@ -354,6 +353,13 @@ width: 100%;
     justify-content: center;
     font-size: 14px;
     color: #777;
+}
+
+.image-placeholder img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 10px;;
 }
 
 .profile-summary {
