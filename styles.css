@@ -1,24 +1,12 @@
 :root {
-    --color-green1: #00D12E;
-    --color-green2: #59FB7C;
-    --color-green3: #8AFAA3;
-    --color-green4: #BAFFC9;
-    --color-green5: #DAFFE2;
     --color-black1: #191919;
     --color-black2: #212121;
     --color-black3: #000;
    --color-orange1: #e89f88;
     --color-gray3: #9CA39D;
     --color-grey4: #444;
-    --color-white1: #F7FDF8;
-    --color-white2: #F8FBFD;
-    --color-blue1: #008CDB;
-    --color-blue2: #31A6E8;
-    --color-blue3: #70C3F2;
-    --color-blue4: #A0D5F3;
-    --color-blue5: #CFE6F2;
-    --color-blue6: #EFF5F8;
     --color-white:#fff;
+    --color-purple: #9178dd;
     --font-bree: 'Bree Serif', sans-serif;
     --font-noto: 'Noto Sans', sans-serif; 
 }
@@ -103,6 +91,13 @@ nav a {
     position: absolute;
 }
 
+.purple-highlight {
+    color: var(--color-purple);
+}
+.name {
+    font-size: 1.2em;
+}
+
 .large {
   max-width: 500px;
   max-height: 500px;
@@ -124,9 +119,9 @@ nav a {
     color: var(--color-orange1);
 }
 
-/* .circle-name {
-    color: var(--color-white)
-} */
+.circle-name {
+    font-size: 1.2em;
+}
 
 @keyframes glowFadeIn {
   from {

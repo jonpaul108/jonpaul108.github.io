@@ -134,8 +134,8 @@ function generatePortfolioHTML() {
 export const htmlString = () => `
 <section class="circles-container" id="hero-message"></section>
         <div class="circle large">
-            <h1>Hello, I'm <span class="circle-name">Jon</span></h1>
-            <p class="medium-text">I'm a project manager with super powered collaborative skills</p>
+            <h1>Hello, I'm <span class="circle-name purple-highlight">Jon</span></h1>
+            <p class="medium-text">I'm a <span class="purple-highlight job-title">project manager</span> with super powered collaborative skills</p>
         </div>
         <div class="circle medium"></div>
         <div class="circle small"></div>
