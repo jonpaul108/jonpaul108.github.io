@@ -4,13 +4,12 @@
     --color-green3: #8AFAA3;
     --color-green4: #BAFFC9;
     --color-green5: #DAFFE2;
-    --color-black1: #001805;
-    --color-black2: #092B10;
-    --color-black3: #27392B;
-    --color-gray1: #475049;
-    --color-gray2: #6E7570;
+    --color-black1: #191919;
+    --color-black2: #212121;
+    --color-black3: #000;
+   --color-orange1: #e89f88;
     --color-gray3: #9CA39D;
-    --color-grey4: #D5DAD6;
+    --color-grey4: #444;
     --color-white1: #F7FDF8;
     --color-white2: #F8FBFD;
     --color-blue1: #008CDB;
@@ -29,7 +28,7 @@ html {
 
 body {
     font-family: 'Noto Sans', sans-serif;
-    background-color: var(--color-green2);
+    background-color: var(--color-black2);
     margin: 0;
     padding: 0;
     display: flex;
@@ -38,7 +37,11 @@ body {
     height: 100vh;
     position: relative;
     letter-spacing: 0.05em;
-    color: var(--color-black2);
+    color: var(--color-white);
+}
+
+section {
+    padding-bottom: 15em;
 }
 
 header {
@@ -51,20 +54,21 @@ header {
     justify-content: space-between;
     position: fixed;
     top: 0;
-    background-color: var(--color-green2);
+    background-color: var(--color-black1);
+    z-index: 5;
 }
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 20px;
+    padding: 0px 3em;
     width: 100%;
 }
 
 
 nav a {
     text-decoration: none;
-    color: black;
+    color: var(--color-white);
     margin: 0 10px;
 }
 
@@ -75,7 +79,13 @@ nav a {
 
 .right-nav a {
     margin-left: 10px;
-    font-size: 1.5em;
+    font-size: 1.4em;
+    color: var(--color-orange1);
+    transition: 0.3s ease;
+}
+
+.right-nav a:hover {
+    color: var(--color-white)
 }
 
 .circles-container {
@@ -88,7 +98,7 @@ nav a {
 }
 
 .circle {
-    background-color: var(--color-white1);
+    background-color: var(--color-black3);
     border-radius: 50%;
     position: absolute;
 }
@@ -97,18 +107,35 @@ nav a {
   max-width: 500px;
   max-height: 500px;
   width: 16em;
-    height: 16em;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5em;
-    z-index: 2;
+  height: 16em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  z-index: 2;
+  animation: glowFadeIn 1.5s ease-out   forwards 0.5s;
 }
 
+.large h1, p {
+    color: var(--color-orange1);
+}
+
+/* .circle-name {
+    color: var(--color-white)
+} */
+
+@keyframes glowFadeIn {
+  from {
+    box-shadow: 0 0 0px white;
+  }
+  to {
+    box-shadow: 0 0 2em white; /* Adjust the spread of the glow as needed */
+  }
+}
 .medium {
     max-width: 250px;
   max-height: 250px;
@@ -116,6 +143,7 @@ nav a {
     height: 6em;
     top: 74%;
     left: 36%;
+    animation: glowFadeIn 1.5s ease-out forwards 1s;
 }
 
 .medium-text {
@@ -133,6 +161,7 @@ nav a {
     height: 4em;
     top: 90%;
     left: 30%;
+    animation: glowFadeIn 2s ease-out forwards 1.5s;
 }
 
 h1 {
@@ -149,57 +178,35 @@ h1 {
     max-height: 100px;
     transform: rotate(90deg);
     z-index: 5;
+    color: var(--color-orange1);
+    transition: 0.3s ease-in-out;
+    opacity: 0.7;
+}
+
+@keyframes darkFadeIn {
+  from {
+    box-shadow: 0 0 0px var(--color-black3);
+  }
+  to {
+    box-shadow: 0 0 2em var(--color-black3); /* Adjust the spread of the glow as needed */
+  }
+}
+
+.arrow:hover {
+    color: var(--color-white);
+    cursor: pointer;
+    animation: darkFadeIn 1.5s ease-out forwards;
+    opacity: 1;
 }
 .arrow-container {
   position: fixed;
   right: 20px;
   bottom: 20px;
+  z-index: 100;
+  transition: 0.5s ease-in-out;
 }
-
-.about-me {
-    background-color: var(--color-blue2);
-    padding: 40px 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
-    gap: 20px;
-    width: 100%;
-    padding: 20px 5%;
-    box-sizing: border-box;
-    max-width: 1400px; 
-}
-
-.card {
-    background-color: var(--color-white1);
-    width: 100%; /* Adjusting for grid */
-    max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-    border-radius: 8px;
-}
-
-.card h3 {
-    margin-top: 10px;
-    font-size: 1.7em;
-}
-.card img {
-    max-width: 100%;
-    max-height: 300px;
-    margin: 20px 0;
-}
-
-.card p {
-    text-align: center;
-    font-size: 1.2em;
+.arrow-container:hover {
+    transform: scale(1.2);
 }
 
 .header-two {
@@ -208,227 +215,11 @@ h1 {
     font-family: var(--font-bree);
 }
 
-/* Responsive adjustments */
-@media (max-width: 1024px) {
-    .card-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
-    }
-}
-
-@media (max-width: 767px) {
-    .card-container {
-        grid-template-columns: 1fr; /* 1 column on mobile */
-    }
-}
-
-.skills-section {
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.skill-card {
-   background-color: var(--color-white1);
-    width: 17em;
-    max-width: 400px;
-    /* max-height: 600px; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    box-sizing: border-box;
-    border-radius: 8px;
-    font-size: 1.2em;
-
-}
-.skill-desc-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 2em;
-}
 
 material-icons.toggle-icon {
     display: block;  /* Adjust this as needed, e.g., inline-block */
 }
 
-.skills ul {
-    display: none;
-    grid-template-rows: repeat(4, auto); /* Creates a max of 4 rows */
-    grid-auto-flow: column; /* Makes items flow into columns */
-    grid-column-gap: 3em;
-   grid-row-gap: 10px; /* Gap between grid items */
-    list-style-type: none;
-    padding: 0;
-    font-size: 1.5em;
-    line-height: 0.8em;
-    color: var(--color-black1)
-}
-
-@media screen and (max-width: 650px) {  /* Adjust the breakpoint as needed */
-  .skills-section {
-    visibility: hidden;
-    opacity: 0
-  }
-    /* .skills ul {
-        display: grid; 
-        visibility: hidden; 
-        opacity: 0;
-        max-height: 0; 
-        overflow: hidden;
-        transition: opacity 0.3s, max-height 0.3s;
-    }
-       .skills ul.visible { 
-        visibility: visible;
-        opacity: 1;
-        max-height: 1000px; 
-    }
-    .material-icons.toggle-icon {
-        display: none;
-    } */
-}
-
-@media (min-width: 751px) {
-    .skills ul {
-        display: grid; /* Or however you wish to display it on desktop */
-        visibility: visible; /* Resetting the visibility */
-        opacity: 1; /* Resetting the opacity */
-        max-height: none; /* Resetting the max-height */
-    }
-}
-
-.skills li {
-    margin-bottom: 10px;
-}
-.skill-bar {
-    background-color: blue; /* Background color from the right */
-    width: 100%; /* Full width of the container */
-    min-width: 7em;
-    height: 30px; /* Adjust as per your design preference */
-    border-radius: 15px; /* Making the bar a bit rounded */
-    overflow: hidden; /* To ensure the inner bar stays within bounds */
-}
-
-.skill-level {
-    background-color: var(--color-blue2); /* Skill color */
-    height: 100%; /* Covering the full height of its parent */
-    transition: width 0.3s ease-in-out; /* Smooth transition effect */
-}
-
-
-
-.resume-section {
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--color-blue3);
-    
-}
-
-.resume-title {
-  font-size: 4em;
-  color:var(--color-white);
-  font-family: var(--font-bree);
-}
-
-.resume-container {
-width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    
-}
-.image-placeholder {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    color: #777;
-}
-
-.image-placeholder img {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-  border-radius: 10px;;
-}
-
-.profile-summary {
-    flex: 1;
-    padding: 20px;
-    width: 40%;
-    max-width: 250px;
-    background-color: var(--color-blue5);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 10px 0px 0px 10px;
-}
-
-.work-experience {
-    flex: 2;
-    padding: 20px;
-    max-width: 55%;
-    background-color: var(--color-blue6);
-    border-radius: 0px 10px 10px 0px;
-}
-
-.work-experience h3, h4 {
-    color: #444;
-    margin-top: 0;
-}
-
-.work-experience h3 {
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 10px;
-}
-
-.work-experience h4 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-weight: bold;
-    font-size: 1.2em;
-    color: var(--color-black1)
-}
-
-.work-experience ul li {
-   margin-bottom: 10px;
-}
-
-.work-experience h3 {
-  color: var(--color-gray2);
-}
-
-/* Portfolio Section Styles */
-.portfolio-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 0;
-    background-color: var(--color-green3);
-    width: 100%;
-}
-
-.portfolio-section img {
-    width: 100%;
-    max-width: 800px;
-    margin-top: 20px;
-}
-
-.portfolio-heading {
-  font-size: 4em;
-  color: var(--color-gray1);
-  font-family: var(--font-bree);
-}
 
 /* Contact Form Section Styles */
 .contact-form-section {
@@ -436,8 +227,12 @@ width: 100%;
     flex-direction: row;
     align-items:flex-start;
     padding: 30px 0;
-    gap: 20px;
-    
+    gap: 4em;
+    color: var(--color-grey4);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-form-section form {
@@ -451,22 +246,27 @@ width: 100%;
     justify-content: space-between;
     gap: 10px;
     align-items: center;
-    background-color: var(--color-white1);
+    background-color: var(--color-white);
     border-radius: 10px;
+}
+
+.contact-form-section form:hover {
+    animation: darkFadeIn 1s ease-out forwards;
 }
 .contact-message {
   max-width: 500px;
   width: 20em;
+color: var(--color-white);
 }
 
 .contact-message h2 {
-  color: var(--color-black1);
   font-size: 2em;
 }
 
 .contact-form-section input {
   width: 100%;
   height: 2em;
+  border: 2px solid var(--color-grey4);
 }
 
 .contact-form-section label {
@@ -476,15 +276,24 @@ width: 100%;
 .contact-form-section textarea {
     width: 100%;
     resize: vertical;
+      border: 2px solid var(--color-grey4);
 }
 
 
 .submit {
   width: 100%;
   height: 3em;
+  transition: 0.5s ease-in-out;
+  background-color: var(--color-white);
+  color: var(--color-grey4);
   border-radius: 10px;
-  border: var(--color-blue2);
-  background-color: var(--color-blue3);
+  border: 2px solid var(--color-grey4);
+}
+
+.submit:hover {
+  border: none;
+  background-color: var(--color-grey4);
+  color: var(--color-white);
 }
 
 /* Mobile specific styles */
@@ -502,3 +311,187 @@ width: 100%;
 
 
 
+
+
+.portfolio {
+    max-width: 1200px;
+    margin: 20px auto; /* Center the grid on the page */
+    display: grid;
+    /* Create a flexible grid that starts with two columns and allows them to grow and shrink smoothly */
+     grid-template-columns: repeat(2, minmax(300px, 600px));
+    gap: 2em;
+    margin: 0px 4em;
+}
+
+
+.portfolio-item {
+    aspect-ratio: 1 / 1;
+    min-width: 300px;
+    background-color: var(--color-black4);
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.portfolio-img-container {
+    width: 100%;
+    height: 85%;
+    position: relative;
+}
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 10px;
+    text-align: center;
+    background-color: var(--color-black1);
+    height: 15%;
+}
+
+.project-info h3 {
+    color: var(--color-white);
+}
+
+.project-info p {
+    color: var(--color-white);
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+    .portfolio {
+        grid-template-columns: 1fr; /* On small screens, use one column */
+    }
+}
+
+
+.portfolio-item::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0); /* Transparent by default */
+    transition: background 0.3s ease;
+   
+}
+
+.portfolio-item:hover {
+    animation: darkFadeIn 0.75s ease-out forwards;
+}
+
+.portfolio-item:hover::after {
+    background: rgba(0, 0, 0, 0.2); /* Dark overlay on hover */
+} 
+
+/* potfolio page template css */
+.main-portfolio {
+    width: 90%;
+    line-height: 1.5;
+    margin: 8em auto;
+}
+
+.portfolio-title p {
+font-size: 1.4em;
+max-width: 40em;
+}
+.hero-portfolio {
+    margin-top: 8em;
+    padding: 0;
+}
+
+.portfolio-title h1 {
+    font-size: 3em;
+}
+
+.hero-portfolio p {
+    font-size:  2em;
+}
+
+.hero-portfolio img {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover; /* Adjust as needed */
+    display: block;
+    margin: 10px auto;
+}
+
+.content {
+    padding: 0;
+    margin-top: 20em auto;
+}
+
+.content p {
+    margin: 20px;
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 1.2em;
+}
+
+.content-text {
+    max-width: 60em;
+    background-color: var(--color-black1);
+    margin-bottom: 20em;
+    padding: 10px;
+}
+
+.image-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-container img {
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+    min-width: 400px;
+}
+
+.image-description {
+   padding: 10px 0;
+    background-color: var(--color-black1);
+    width: 70%;
+    min-width: 400px;
+}
+
+.image-description p {
+    text-align: center;
+}
+
+.white-highlight {
+    color: var(--color-white)
+}
+
+.conclusion {
+    margin-top: 20em;
+}
+
+.conclusion-header {
+    font-size: 2em;
+}
+
+.content-conclusion {
+    max-width: 60em;
+    background-color: var(--color-black1);
+    margin-top: 10em;
+    margin-bottom: 5em;
+    padding: 10px;
+}
+
+.section-portfolio:not(:last-of-type) {
+    margin-bottom: 20em;
+}
+
+small {
+    color: #537D8D;
+    font-style: italic
+}
