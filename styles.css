@@ -92,7 +92,7 @@ nav a {
 }
 
 .purple-highlight {
-    color: var(--color-purple);
+    color: var(--color-orange1);
 }
 .name {
     font-size: 1.2em;
@@ -116,7 +116,7 @@ nav a {
 }
 
 .large h1, p {
-    color: var(--color-orange1);
+    color: var(--color-white);
 }
 
 .circle-name {
@@ -256,6 +256,7 @@ color: var(--color-white);
 
 .contact-message h2 {
   font-size: 2em;
+color: var(--color-orange1);
 }
 
 .contact-form-section input {
