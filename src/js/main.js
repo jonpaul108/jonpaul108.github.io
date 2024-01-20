@@ -26,6 +26,7 @@ function router() {
     document.title = view.title;
     app.innerHTML = view.render();
     if (view.utils) view.utils();
+      window.scrollTo(0, 0);
   } else {
     history.replaceState("", "", "/");
     router();
