@@ -390,6 +390,7 @@ color: var(--color-white);
     width: 90%;
     line-height: 1.5;
     margin: 8em auto;
+    color: var(--color-white)
 }
 
 .portfolio-title p {
@@ -403,10 +404,11 @@ max-width: 40em;
 
 .portfolio-title h1 {
     font-size: 3em;
+    color: var(--color-orange1)
 }
 
 .hero-portfolio p {
-    font-size:  2em;
+    color: var(--color-white);
 }
 
 .hero-portfolio img {
@@ -427,6 +429,7 @@ max-width: 40em;
     text-align: justify;
     line-height: 1.5;
     font-size: 1.2em;
+    color: var(--color-white)
 }
 
 .content-text {
@@ -463,11 +466,12 @@ max-width: 40em;
 }
 
 .white-highlight {
-    color: var(--color-white)
+    color: var(--color-orange1)
 }
 
 .conclusion {
     margin-top: 20em;
+    color: var(--color-orange1)
 }
 
 .conclusion-header {
@@ -480,6 +484,10 @@ max-width: 40em;
     margin-top: 10em;
     margin-bottom: 5em;
     padding: 10px;
+}
+
+.content-conclusion p {
+     color: var(--color-white);
 }
 
 .section-portfolio:not(:last-of-type) {
